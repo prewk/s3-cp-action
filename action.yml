@@ -1,0 +1,9 @@
+name: "S3 cp"
+description: "AWS S3 cp"
+author: prewk
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: refresh-cw
+  color: green
