@@ -22,7 +22,7 @@ EOF
 sh -c "aws s3 cp ${SOURCE} ${DEST} \
               --profile s3-cp-action \
               --no-progress \
-              ${ENDPOINT_APPEND} $*"
+              ${ENDPOINT_APPEND} ${FLAGS} $*"
 
 # Clear out credentials after we're done.
 # We need to re-run `aws configure` with bogus input instead of
