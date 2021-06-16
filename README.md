@@ -17,8 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: prewk/s3-cp-action@master
-      env:
+    
+    - name: Copy a file from s3
+      uses: prewk/s3-cp-action@master
+      with:
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         source: 's3://some-bucket/something-remote'
@@ -39,8 +41,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: prewk/s3-cp-action@master
-      env:
+    
+    - name: Copy a folder to s3
+      uses: prewk/s3-cp-action@master
+      with:
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         source: './something-local'
