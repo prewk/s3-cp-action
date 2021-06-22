@@ -1,9 +1,38 @@
 name: "S3 cp"
 description: "AWS S3 cp"
 author: prewk
+      
+inputs:
+  aws_access_key_id:
+    required: True
+  aws_secret_access_key:
+    required: True
+  source:
+    description: |-
+      The name of the key or the file to take as source
+    required: True
+  dest:
+    description: |-
+      The name of the key or the file to take as destination
+    required: True
+  aws_region:
+    description: |-
+      The region where the data will be stored (if the destination is s3)
+    required: False
+    default: us-east-1
+  aws_s3_endpoint:
+    description: |-
+      To change s3 endpoint URL
+    required: False
+  flags:
+    description: |-
+      Flags that are going to be added at the end of the command line
+    required: False
+  
 runs:
   using: docker
   image: Dockerfile
+  
 branding:
   icon: refresh-cw
   color: green
