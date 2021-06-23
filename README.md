@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@master
     
     - name: Copy a file from s3
-      uses: prewk/s3-cp-action@master
+      uses: prewk/s3-cp-action@v2
       with:
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -43,7 +43,7 @@ jobs:
     - uses: actions/checkout@master
     
     - name: Copy a folder to s3
-      uses: prewk/s3-cp-action@master
+      uses: prewk/s3-cp-action@v2
       with:
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
